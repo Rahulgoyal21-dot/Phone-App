@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { logo } from "../logo.svg";
 import { Home, Cart } from "grommet-icons";
 import { Button, Text, Box } from "grommet";
+import { ButtonContainer, BoxWrapper } from "./Button";
 
 export default class NavBar extends Component {
   render() {
@@ -10,7 +11,7 @@ export default class NavBar extends Component {
       <Box direction="row" justify="between" gap="large" background="#009ffd">
         <Box direction="row" gap="medium" margin={{ left: "large" }}>
           <Link to="/">
-            <Button icon={<Home color="plain" size="medium" />} />
+            <ButtonContainer icon={<Home color="plain" size="medium" />} />
           </Link>
           <Box margin={{ top: "13px" }}>
             <Link to="/">
@@ -20,7 +21,7 @@ export default class NavBar extends Component {
         </Box>
         <Box margin={{ top: "xsmall", right: "large" }}>
           <Link to="/cart">
-            <Button
+            <ButtonContainer
               icon={<Cart color="plain" size="medium" />}
               label="My Cart"
             />
