@@ -1,11 +1,32 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { logo } from "../logo.svg";
+import { Home, Cart } from "grommet-icons";
+import { Button, Text, Box } from "grommet";
 
-export default class Navbar extends Component {
+export default class NavBar extends Component {
   render() {
     return (
-      <div>
-        <h3>hello from navbar</h3>
-      </div>
+      <Box direction="row" justify="between" gap="large" background="#009ffd">
+        <Box direction="row" gap="medium" margin={{ left: "large" }}>
+          <Link to="/">
+            <Button icon={<Home color="plain" size="medium" />} />
+          </Link>
+          <Box margin={{ top: "13px" }}>
+            <Link to="/">
+              <Text color="black">Products</Text>
+            </Link>
+          </Box>
+        </Box>
+        <Box margin={{ top: "xsmall", right: "large" }}>
+          <Link to="/cart">
+            <Button
+              icon={<Cart color="plain" size="medium" />}
+              label="My Cart"
+            />
+          </Link>
+        </Box>
+      </Box>
     );
   }
 }
