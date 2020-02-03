@@ -10,6 +10,7 @@ import NavBar from "./components/NavBar";
 import Details from "./components/Details";
 import Default from "./components/Default";
 import Cart from "./components/Cart";
+import ProductConsumer from "./context";
 
 function App() {
   return (
