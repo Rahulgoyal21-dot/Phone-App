@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Cart } from "grommet-icons";
 import { ProductConsumer } from "../context";
 
 export default class Product extends Component {
@@ -10,7 +11,7 @@ export default class Product extends Component {
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">
           <div
-            className="img-container p-5"
+            className="img-container p-2"
             onClick={() => console.log("you clicke cmee")}
           >
             <Link to="/details">
@@ -29,9 +30,16 @@ export default class Product extends Component {
                   in inCart
                 </p>
               ) : (
-                <i className="fas fa-cart-plus" />
+                <Cart color="plain" size="small" />
               )}
             </button>
+          </div>
+          <div className="card-footer d-flex justify-content-between">
+            <p className="align-self-center mb-0">{title}</p>
+            <h5 className="text-blue font-italic mb-0">
+              <span className="mr-1">$</span>
+              {price}
+            </h5>
           </div>
         </div>
       </ProductWrapper>
@@ -39,4 +47,55 @@ export default class Product extends Component {
   }
 }
 
-const ProductWrapper = styled.div``;
+const ProductWrapper = styled.div`
+  .card {
+    border-color: red;
+    transition: all 1s linear;
+  }
+  .card-footer {
+    background: var(--offwhiteblue);
+    border-top: 0.2rem solid blue;
+    transition: all 1s linear;
+  }
+  &:hover {
+    .card {
+      border: 0.09rem solid rgba(0, 0, 0, 0.2);
+      box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.2);
+    }
+    ,
+    card-footer {
+      background: rgba(247, 247 247);
+    }
+  }
+  .img-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-img-top {
+    transition: all 1s linear;
+  }
+  .img-container:hover .card-img-top {
+    transform: scale(1.2);
+  }
+
+  .cart-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.2rem 0.4rem;
+    background: var(--lightBlue);
+    border: none;
+    color: var(--mainWhite);
+    font-size: 1.4rem;
+    border-radius: 1rem 0 0 0;
+    transform: translate(100%, 100%);
+    transition: all 1s linear;
+  }
+  .img-container:hover .cart-btn {
+    transform: translate(0, 0);
+  }
+  .cart-btn:hover {
+    color: var(--mainWhite);
+    cursor: pointer;
+  }
+`;
