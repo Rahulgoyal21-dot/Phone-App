@@ -1,16 +1,14 @@
 import React from "react";
-import logo from "./logo.svg";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
-import { Box } from "grommet";
 import ProductList from "./components/ProductList";
 import NavBar from "./components/NavBar";
 import Details from "./components/Details";
 import Default from "./components/Default";
 import Cart from "./components/Cart";
-import ProductConsumer from "./context";
+import Modal from "./components/Modal";
 
 function App() {
   return (
@@ -23,6 +21,7 @@ function App() {
           <Route path="/cart" component={Cart} />
           <Route component={Default} />
         </Switch>
+        <Modal />
       </Router>
     </>
   );
