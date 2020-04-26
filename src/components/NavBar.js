@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { logo } from "../logo.svg";
+
 import { Home, Cart } from "grommet-icons";
-import { Button, Text, Box } from "grommet";
-import { ButtonContainer, BoxWrapper } from "../styled_components/Button";
+import { Text, Box } from "grommet";
+import { ButtonContainer } from "../styled_components/Button";
 
 export default class NavBar extends Component {
   render() {

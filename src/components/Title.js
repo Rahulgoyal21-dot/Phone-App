@@ -1,7 +1,4 @@
 import React from "react";
-import { Box, Text } from "grommet";
-import { TextStyle } from "../styled_components/Text";
-
 function Title({ name, title }) {
   return (
     <div className="row">
